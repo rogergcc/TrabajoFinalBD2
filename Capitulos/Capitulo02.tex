@@ -1,0 +1,77 @@
+\chapter{MARCO TEÓRICO}
+\section{COPIAS DE SEGURIDAD Y RESTAURACIÓN DE BASES DE DATOS}
+Una copia de los datos que se puede utilizar para restaurar y recuperar los datos se denomina copia de seguridad. Las copias de seguridad le permiten restaurar los datos después de un error. Con las copias de seguridad correctas, puede recuperarse de multitud de errores, por ejemplo:
+
+
+
+\item
+\item       - Errores de medios.
+\item       - Errores de usuario, por ejemplo, quitar una tabla por error.
+\item       - Errores de hardware, por ejemplo, una unidad de disco dañada o la pérdida permanente de un servidor.
+\item       - Desastres naturales.
+\item
+\item
+
+ Además, las copias de seguridad de una base de datos son útiles para fines administrativos habituales, como copiar una base de datos de un servidor a otro, configurar la creación de reflejo de la base de datos y el archivo, etc.
+
+\section{CÓMO IMPEDIR LA PÉRDIDA DE LOS DATOS}
+Impedir la pérdida de datos es uno de los problemas más importantes que afrontan los administradores de sistemas.
+
+\subsection{Disponer de una estrategia de copia de seguridad}
+Debe tener una estrategia de copia de seguridad para aminorar la pérdida de datos y recuperar los datos perdidos. Los datos se pueden perder como consecuencia de errores de hardware o de software, o bien por:
+
+\item
+\item - El uso accidental o malintencionado de una instrucción DELETE.
+\item  - El uso accidental o malintencionado de una instrucción UPDATE; por ejemplo, no utilizar la cláusula WHERE con una instrucción UPDATE (se actualizan todas las filas en lugar de una fila concreta de la tabla).
+\item  - Virus destructivos.
+\item  - Desastres naturales, como incendios, inundaciones y terremotos.
+\item  - Robo.
+\item
+\item
+
+Si utiliza una estrategia de copia de seguridad adecuada, puede restaurar los datos con un costo mínimo sobre la producción y reducir la posibilidad de que los datos se pierdan definitivamente. Piense en la estrategia de copia de seguridad como un seguro. Su estrategia de copia de seguridad debe devolver el sistema al punto en el que se encontraba antes del problema. Al igual que con una póliza de seguros, pregúntese: “¿cuánto estoy dispuesto a pagar y cuántas pérdidas puedo permitirme?”.
+
+\item
+\item
+
+Los costos asociados con la estrategia de copia de seguridad incluyen la cantidad de tiempo que se emplea en diseñar, implementar, automatizar y probar los procedimientos de copia de seguridad. Aunque la pérdida de datos no se puede impedir completamente, debe diseñar una estrategia de copia de seguridad para reducir el alcance de los daños. Cuando diseñe una estrategia de copia de seguridad, considere la cantidad de tiempo que se puede permitir que el sistema esté parado, así como la cantidad de datos que se puede admitir perder (si puede perderse alguno) en el caso de un error del sistema.
+
+\item
+\item
+    
+\subsection{Hacer copias de seguridad con regularidad}  
+La frecuencia con que haga las copias de seguridad de la base de datos depende de la cantidad de datos que esté dispuesto a perder y la actividad de la base de datos. Cuando haga copias de seguridad de bases de datos de usuario, tenga en cuenta los siguientes hechos e instrucciones:
+
+
+
+
+
+Este un ejemplo de imagen
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1.7]{Figuras/universe.jpg}
+\caption{The Universe}
+\label{fig:universe}
+\end{figure}
+
+Terminamos
+
+\subsection{Estrategias de Recuperaci\'on}
+
+\begin{table}[ht]
+\centering{
+    \fontfamily{ptm}
+        \selectfont{
+            %\rowcolors{1}{gray}{cyan}
+            \begin{tabular}{ll}
+                Actividad & Duraci\'on\\ \hline
+                Elaboración de los Aspectos Generales del Trabajo de Investigaci\'on   &   10 d\'ias\\
+                Elaboración del Marco Te\'orico   &   35 d\'ias\\
+                Elaboración del Marco Metodol\'ogico   &   15 d\'ias\\
+                Elaboración del Marco Metodol\'ogico   &   15 d\'ias\\
+                1.17650193990183 & 4.440$\times10^{-16}$\\ \hline
+            \end{tabular}
+}}
+\caption{Cronograma}
+\end{table}

@@ -1,0 +1,218 @@
+%%% Definiendo Paquetes
+% fonts, margins, interline spacing
+\usepackage{helvet}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[spanish,es-lcroman]{babel}
+
+% APA bibliographic references
+\usepackage{apacite}
+
+% Chapter titles (chapter, section, subsection) formatting
+\usepackage{titlesec}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{equation}}
+
+% Managing indentations chapter, section, subsection title
+%\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{1cm}}
+
+%\titleformat{\section}{}
+%{\makebox[1in][l]{\thesection}}{0in}{}
+%\titleformat{\subsection}{}
+%{\makebox[1in][l]{\thesubsection}}{0in}{}
+
+% Customozing Titles
+\addto\captionsspanish{
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\renewcommand{\listtablename}{LISTA DE TABLAS}}
+
+\addto\captionsspanish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}{CONTENIDO} }
+\addto\captionsspanish{
+\renewcommand{\tablename}{Tabla} }
+
+% Font in chapter, section, subsection titles
+\usepackage{sectsty}   
+\chapterfont{\bfseries\centering\normalsize}
+\sectionfont{\bfseries\normalsize}
+\subsectionfont{\bfseries\normalsize}
+
+% Managing table of contents 
+\usepackage[tocindentauto]{tocstyle}
+\usepackage[numbib,notlof,notlot,nottoc]{tocbibind}
+
+% Counting tables and figures without chapter
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+%\renewcommand{\thetable}{Tabla N\textordmasculine \arabic{table}\vspace{1cm}}
+\renewcommand{\thetable}{N\textordmasculine \arabic{table}\vspace{1cm}}
+\renewcommand{\thefigure}{Figura N\textordmasculine \arabic{figure}\vspace{1cm}}
+
+%\renewcommand{\thetable}{\addtocounter{table}{1}Tabla N$^\circ$\,\arabic{table}}
+%\renewcommand{\thefigure}{\addtocounter{table}{1}Figura N$^\circ$\,\arabic{figure}}
+
+%\usepackage{tocloft}
+%\renewcommand{\cftfigpresnum}{Figure\ }
+%\renewcommand{\cfttabpresnum}{Table\ }
+
+% Redefining macro in book/report disabling \addvspace in the list of figures/tables
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
+\addtocontents{lot}{\protect\noaddvspace}
+
+% Managing lists (enumerate, itemize)
+%\usepackage{enumitem}
+%\setlist[enumerate]{itemsep=1.5cm}
+%\setlist[itemize]{itemsep=1.5cm}
+
+%% Diseñando Caratula
+\renewcommand{\maketitle}
+{
+    \singlespacing
+    \thispagestyle{empty}
+        \begin{center}
+            \vspace*{1cm}
+               {UNIVERSIDAD PRIVADA DE TACNA}\\
+    		\vspace*{1cm}
+               {FACULTAD DE INGENIER\'IA}\\
+    		\vspace*{1cm}
+               {Escuela Profesional de Ingenier\'ia de Sistemas}\\
+            \vspace*{3cm}					
+    		    \textbf{\@title}\\
+            \vspace*{2cm}
+    			{Curso: Base de Datos II}\\
+            \vspace*{1cm}
+    			{Docente: Ing. Patrick Cuadros Quiroga}\\
+            \vspace*{1.5cm}
+    			{Integrantes}\\
+    		\vspace*{1cm}
+                {\@author}\\
+            \vspace*{\stretch{1}}\\
+                Tacna - Per\'u 
+            \vspace*{1cm}\\
+                {\@date}
+        \end{center}
+    }
+
+%Dise�ando Agradecimientos
+%*****************************************************************************
+\newenvironment{agradecimientos}
+{
+    \doublespacing
+		\chapter*{AGRADECIMIENTOS}
+	  \vspace*{0.5cm}
+    \parindent 0cm
+    \narrower
+    \vfill
+    \thispagestyle{empty}
+}
+{
+    \vfill
+    \vfill
+    \vfill
+    \clearpage
+}
+
+
+%*****************************************************************************
+%Dise�ando Abstract
+%*****************************************************************************
+%\newenvironment{abstract}
+%{
+    %\doublespacing
+		%\chapter*{Abstract}
+		%\addcontentsline{toc}{chapter}{Abstract}
+    %\vspace*{0.5cm}
+    %\narrower
+    %\vfill
+    %\thispagestyle{empty}
+%}
+%{
+    %\vfill
+    %\vfill
+    %\vfill
+    %\clearpage
+%}
+
+
+%*****************************************************************************
+%Dise�ando Resumen
+%*****************************************************************************
+\newenvironment{resumen}
+{
+    \doublespacing
+    \chapter*{RESUMEN}
+		\addcontentsline{toc}{chapter}{RESUMEN}
+    \vspace*{0.5cm}
+    \narrower
+    \vfill
+    \thispagestyle{empty}
+}
+{
+    \vfill
+    \vfill
+    \vfill
+    \clearpage
+}
+
+
+%*****************************************************************************
+%Dise�ando los �ndices
+%*****************************************************************************
+%\newif \if@listtab
+%\newif \if@listfig
+
+%\newcommand{\itb}{\@listtabtrue}
+%\newcommand{\ifg}{\@listfigtrue}
+%
+%\newcommand{\indice}[1]
+%{    
+%    #1
+%    \pagenumbering{arabic}
+%    
+%    \tableofcontents
+%    
+%    \if@listtab
+%        \listoftables
+%    \fi
+%    
+%    \if@listfig
+%        \listoffigures
+%    \fi
+%}
+
+%%% Dise�ando Encabezado y Pie de P�gina
+\pagestyle{fancy}
+%\fancyhf{}
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+%%% Dise�ando P�rrafos
+\parindent 1cm
+\parskip 0cm
+\footskip 1.5cm
+
+%%% Mensajes de Error
+\renewcommand{\@title}{\ClassError{UNJBG}{Falta especificar \string\title{}}
+ {Use el comando \string\title{} en el preambulo para especificar \MessageBreak
+  el titulo de su tesis.}}
+\renewcommand{\title}[1]{\gdef\@title{#1}}
+
+\renewcommand{\@author}{\ClassError{UNJBG}{Falta especificar \string\author{}}
+ {Use el comando \string\author{} en el preambulo para especificar su nombre.}}
+\renewcommand{\author}[1]{\gdef\@author{#1}}
+
+%%% Nombre de mes
+\newcommand{\mes}{\ifcase\month\or Enero\or Febrero\or
+      Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or
+      Octubre\or Noviembre\or Diciembre\fi}
+
+\endinput
