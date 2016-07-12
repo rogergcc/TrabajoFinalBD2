@@ -1,13 +1,64 @@
 \chapter{DESAROLLO}
 
-\section{General}
-\begin{enumerate}
-\item Desarrollar una Guía Técnica de estrategia de copias de Seguridad y Recuperación de Bases de Datos
-\end{enumerate}
+\section{PROCEDIMIENTOS PARA LA CREACIÓN DE COPIAS:}
+\textbf {Primero se instaló la base de datos Oracle: Oracle Database 11g Release 2 (11.2.0.1.0) Standard Edition, Standard Edition One, and Enterprise Edition} para Windows
 
-\section{Espec\'ificos}
-\begin{enumerate}
-\item Definir qué tipo de backup aplicar y en qué consiste cada uno.
-\item Explicar el impacto de las estrategias de backups en las necesidades del espacio.
+\url{http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-win64soft-094461.html}
 
-\end{enumerate}
+\textbf{Segundo} se utilizó el programa   sql developer para windows, esto fue para migrar la base de datos de mysql a oracle.
+Si es que se requiera cambiar el puerto \textbf { oracle exec DBMS\_xdb.sethttpport(‘8082’);}
+\url{https://www.youtube.com/watch?v=-LJ_370_88g}
+
+Las copias de seguridad o backups pueden ser físicas y lógicas:
+
+-Las físicas se realizan cuando se copian los ficheros que soportan la BD. Entre estos se encuentran los backups del SO, los backups en frío y los backups en caliente.
+
+\subsection{Backups del SO}
+
+Este tipo de backup implica parar la BD en modo normal y esto la hace inaccesible el sistema mientras se lleva a cabo.
+
+
+\subsection{Backups de la BD en Frio}
+
+Los backups en frio implican parar la BD en modo normal y copiar todos los ficheros sobre los que se asienta. Antes de parar la BD hay que parar también todas las aplicaciones que estén trabajando con la BD. Una vez realizada la copia de los ficheros, la BD se puede volver a arrancar.
+
+
+\subsection{Backups de la BD en Caliente}
+
+El backup en caliente se realiza mientras la BD está abierta y funcionando en modo ARCHIVELOG. Habrá que tener cuidado de realizarlo cuando la carga de la BD sea pequeña. Este tipo de backup consiste en copiar todos los ficheros correspondientes a un tablespace determinado, los ficheros redo log archivados y los ficheros de control.
+
+-Las lógicas sólo extraen información de las tablas utilizando comandos SQL y utilizando las herramientas export e import.
+
+\subsection{Backups Lógicos con Export/Import}
+
+Estas utilidades permiten al DBA hacer copias de determinados objetos de la BD, así como restaurarlos o moverlos de una BD a otra. Estas herramientas utilizan comandos del SQL para obtener el contenido de los objetos.
+
+\textbf{NOTA: Una vez que se ha planeado una estrategia de backup y se ha probado, conviene automatizarla para facilitar así su cumplimiento.}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/ingresarsqlplus.png}
+\caption{Ingresar a sqlplus como sysdba}
+\label{fig:ingresar}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/spfile.png}
+\caption{Create archivo spfile}
+\label{fig:spfile}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/startdb.png}
+\caption{Iniciando la Base de Datos}
+\label{fig:startdb}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/linux.png}
+\caption{Iniciando la Base de Datos}
+\label{fig:linux}
+\end{figure}

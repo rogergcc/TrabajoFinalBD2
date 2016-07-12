@@ -224,4 +224,7 @@ RMAN: Es un método preferido para realizar copias de seguridad de manera eficie
 \textbf{\flushleft{Backup en Caliente}}: El backup en caliente se realiza mientras la BD está abierta y funcionando en modo ARCHIVELOG. Habrá que tener cuidado de realizarlo cuando la carga de la BD sea pequeña.
 Este tipo de backup consiste en copiar todos los ficheros correspondientes a un tablespace determinado, los ficheros redo log archivados y los ficheros de control. Esto para cada tablespace de la BD.
 
+\textbf{\flushleft{Oracle DataPump}}: Es una característica nueva y única de Oracle Database 11g Release 2. Un nuevo paquete de interfaz pública, DBMS\_DATAPUMP, proporciona una infraestructura de servidor para los datos rápidos y movimiento metadatos entre las bases de datos de Oracle. Es ideal para las bases de datos amplias y entornos de almacenamiento de datos, ahorro de tiempo para los administradores de bases de datos. DataPump es una característica integral de Oracle Database 11g Release 2 y está disponible en todas las configuraciones.
+
+ \textbf{\flushleft{RedoLog}}: El Redo Log es un conjunto de archivos que protegen la información de la base de datos alterada que aún no ha sido escrita en los archivos.
 

@@ -1,13 +1,28 @@
 \documentclass[a4paper,20pt]{report}
+\usepackage[spanish]{babel} 
 \usepackage[utf8]{inputenc}
 %\graphicspath{ {images/} }
+
 
 \usepackage{fancyhdr}
 \usepackage{hlundef}
 \usepackage{informe}
+\usepackage{hyperref}
+
+
+
 \usepackage[table]{xcolor}
 
 \usepackage{enumerate} % Personalizar enumeraciones
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\urlstyle{same}
+
 
 % USO PERSONALIZADO CARATULA
 \title{Estrategia de Copias de Seguridad para una Empresa}
@@ -21,8 +36,13 @@ Galindo Maquera Mamani (2012042429)\\
 }
 \date{2016}
 
-% INICIO DOCUMENTO
+\usepackage{natbib}
+\usepackage{graphicx} % figuras
+\usepackage{subfigure} % subfiguras
+
+
 \begin{document}
+
 %\pagenumbering{roman} % Paginacion en i, ii, iii,...
 \maketitle
 
@@ -37,6 +57,7 @@ Galindo Maquera Mamani (2012042429)\\
 %%% En esta parte se incluye los archivos del informe
 \include{Capitulos/Introduccion}
 \pagenumbering{arabic} % pagionacion en 1,2,3...
+
 
 \include{Capitulos/Capitulo01}
 \include{Capitulos/Capitulo02}
