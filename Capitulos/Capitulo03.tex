@@ -101,3 +101,46 @@ En las opciones avanzadas tan sólo añadiremos que realice copia también de lo
 \label{fig:bear}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/backupEM-6.png}
+\caption{Revisamos que todo esté correcto y ejecutamos el trabajo. Si todo ha ido bien debería aparecer esto:”
+}
+\label{fig:backup6}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.7]{../images/backupEM-7.png}
+\caption{Revisamos que todo esté correcto y ejecutamos el trabajo. Si todo ha ido bien debería aparecer esto:”
+}
+\label{fig:backup7}
+\end{figure}
+
+\section{RECUPERACIÓN  DESDE  ENTERPRISE  MANAGER:}
+
+Para realizar una recuperación desde EM, iremos a “Disponibilidad” y seleccionamos
+Realizar Recuperación.
+
+
+\begin{figure}[h]
+\includegraphics[width=1\textwidth]{../images/backupEM-8.jpg}
+\caption{En ámbitos de recuperación podemos seleccionar toda o parte de la base de datos para recuperar.
+
+Para el ejemplo  hemos  borrado  el  datafile USERS01.DBF(OFFLINE)  despues de realizar el backup y ahora vamos a intentar recuperarlo. Para ello usaremos la copia que acabamos de realizar.
+Iniciamos oracle en modo mount y arrancamos EM.
+Al no poder iniciar nos encontramos con esto una vez logueados.}
+\label{fig:backup8}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=1\textwidth]{../images/backupEM-9.jpg}
+\caption{Pinchamos en Realizar Recuperación. Introducimos los credenciales de host.Continuar Nos conectamos como sysdba.}
+\label{fig:backup9}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=1\textwidth]{../images/backupEM-10.jpg}
+\caption{En el ámbito de recuperación elegimos Archivos de Datos y en el tipo de operación restaurar hasta hora actual. Pinchamos en recuperar.}
+\label{fig:backup10}
+\end{figure}
